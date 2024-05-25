@@ -65,7 +65,7 @@ export default function Test() {
                 <Pagination
                     arrDatas={arrDatas}
                     countDataPerPage={6}
-                    pathName={'/all-datas/page/'}
+                    pathName={'/all-Datas/page/'}
                     onFilterDatas={handleFilterArrDatas}
                 />
             </div>
@@ -73,6 +73,22 @@ export default function Test() {
     )
 }
 ```
+
+## Uses Props The Pagination 
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `arrDatas` | `Array` | **Required**. Array of products or anything else |
+| `countDataPerPage` | `Number` | **Required**. On each page you want to show multiple items |
+| `pathName` | `String` | **Required**. The URL that your product is located in. |
+| `onFilterDatas` | `Function` | **Required**. Returns a function that contains data on that page، such as page 4. |
+| `isArrowsShow` | `Boolean` | **Optional**. Auxiliary arrows for switching between pages |
+| `separateBox` | `Boolean` | **Optional**.  I mean, with... Spaces between page 1 and 4 |
+| `bgColor` | `String` | **Optional**. Background-Color of all boxes. |
+| `bgColorActive` | `String` | **Optional**. The background color of the box of that active page |
+| `color` | `String` | **Optional**. Color of all boxes. |
+| `colorActive` | `String` | **Optional**. Text Color Box of the active page |
+
 
 ___
 >### Social Network
