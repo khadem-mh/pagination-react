@@ -36,6 +36,7 @@ import Pagination from 'Pagination';
 - An example in the project.
 ```javascript
 import React, { useState, useEffect } from 'react'
+import Pagination from 'Pagination';
 
 export default function Test() {
 
