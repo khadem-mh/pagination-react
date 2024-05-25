@@ -18,6 +18,61 @@
 
 <img src="./public/Images/modes.png" width="500">
 
+## Usage
+- Import the pagination component first.
+
+```javascript
+import Pagination from 'Pagination';
+```
+- Then enter these essential items to launch pagination
+```javascript
+ <Pagination
+        arrDatas={arrDatas}
+        countDataPerPage={1}
+        pathName={'/all-courses/page/'}
+        onFilterDatas={handleFilterArrDatas}
+/>
+```
+- An example in the project.
+```javascript
+import React, { useState, useEffect } from 'react'
+
+export default function AllCourses() {
+
+    const [allDatas, setAllDatas] = useState([])
+    const [filterDataPage, setFilterDataPage] = useState([])
+
+    useEffect(() => {
+        fetch(`http://localhost:3000/v1/datas`)
+            .then(res => res.json())
+            .then(datas => setAllCourses(datas))
+    }, [])
+
+    const handleFilterCourses = datas => setFilterCoursesPage(datas)
+
+    return (
+        <section>
+            <div>
+                {
+                    filterDataPage.map((datas, index) => (
+                        <Course key={index} {...datas} />
+                    ))
+                }
+            </div>
+
+            <div>
+                <Pagination
+                    arrDatas={arrDatas}
+                    countDataPerPage={1}
+                    pathName={'/all-courses/page/'}
+                    onFilterDatas={handleFilterArrDatas}
+                />
+            </div>
+        </section>
+    )
+}
+```
+
 ___
 >### Social Network
 > [<img src="./public/Images/github.png" width="30">](https://github.com/khadem-mh)
