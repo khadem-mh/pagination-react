@@ -14,4 +14,4 @@
 
 ## View of the Library
 
-<img src="./public/image/modes.png" width="500">
+<img src="./public/image/modes.png" width="1000">
