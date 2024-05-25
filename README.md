@@ -27,17 +27,17 @@ import Pagination from 'Pagination';
 - Then enter these essential items to launch pagination
 ```javascript
  <Pagination
-        arrDatas={arrDatas}
-        countDataPerPage={1}
-        pathName={'/all-courses/page/'}
-        onFilterDatas={handleFilterArrDatas}
+    arrDatas={arrDatas}
+    countDataPerPage={1}
+    pathName={'/all-courses/page/'}
+    onFilterDatas={handleFilterArrDatas}
 />
 ```
 - An example in the project.
 ```javascript
 import React, { useState, useEffect } from 'react'
 
-export default function AllCourses() {
+export default function Test() {
 
     const [allDatas, setAllDatas] = useState([])
     const [filterDataPage, setFilterDataPage] = useState([])
