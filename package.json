@@ -2,7 +2,10 @@
   "name": "react-pagination-smooth",
   "license": "MIT",
   "description": "A very useful and efficient pagination library for React-Spa websites that shows data without refreshing the page",
-  "author": "Mohammad Hossein Khadem al - Mahdi",
+  "author": {
+    "name": "Mohammad Hossein Khadem al - Mahdi",
+    "email": "khadem13359@gmail.com",
+  },
   "private": false,
   "version": "1.0.0",
   "type": "module",
@@ -11,6 +14,16 @@
     "build": "vite build",
     "main": "Pagination/Pagination.jsx"
   },
+  "keywords": [
+    "react-pagination",
+    "pagination",
+    "pagination-smooth",
+    "react-pagination-smooth",
+    "paginator",
+    "react",
+    "library-pagination",
+    "library-react-pagination",
+  ],
   "peerDependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
