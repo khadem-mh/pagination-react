@@ -16,6 +16,7 @@
 
 ## View of the Library
 
+<img src="./public/Video/page-1.gif" width="500">
 <img src="./public/Images/modes.png" width="500">
 
 ## Usage
