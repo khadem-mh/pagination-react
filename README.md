@@ -64,8 +64,8 @@ export default function Test() {
             <div>
                 <Pagination
                     arrDatas={arrDatas}
-                    countDataPerPage={1}
-                    pathName={'/all-courses/page/'}
+                    countDataPerPage={6}
+                    pathName={'/all-datas/page/'}
                     onFilterDatas={handleFilterArrDatas}
                 />
             </div>
