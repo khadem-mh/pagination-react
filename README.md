@@ -11,4 +11,7 @@
 > The way the package works is that first you enter all the data you need and the number of data you want on each page and leave the rest of the work to the package ☻
 >
 > High personalization capabilities such as color, background, visibility or lack of auxiliary arrows, etc.
+
 ## View of the Library
+
+<img src="./public/image/modes.png" width="500">
