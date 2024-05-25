@@ -4,6 +4,8 @@
 ## Description Library
 > Before you start the description if you want to install this package from the npmjs website, visit this [Link](https://www.npmjs.com/package/react-pagination-smooth)
 >
+> Of course, you can add the same Pagination folder in your project and use only one line of import and use
+>
 > Library ■ A very useful and efficient pagination library for React-Spa websites that shows data without refreshing the page
 >
 > It is very compact and optimized and has only `2 dependencies`, both react and react-dom.
@@ -14,4 +16,4 @@
 
 ## View of the Library
 
-<img src="./public/image/modes.png" width="600">
+<img src="./public/image/modes.png" width="500">
