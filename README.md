@@ -36,7 +36,7 @@ import Pagination from 'react-pagination-smooth';
 - An example in the project.
 ```javascript
 import React, { useState, useEffect } from 'react'
-import Pagination from 'Pagination';
+import Pagination from 'react-pagination-smooth';
 
 export default function Test() {
 
