@@ -21,9 +21,8 @@
 
 ## Usage
 - Import the pagination component first.
-
 ```javascript
-import Pagination from 'Pagination';
+import Pagination from 'react-pagination-smooth';
 ```
 - Then enter these essential items to launch pagination
 ```javascript
@@ -47,10 +46,10 @@ export default function Test() {
     useEffect(() => {
         fetch(`http://localhost:3000/v1/datas`)
             .then(res => res.json())
-            .then(datas => setAllCourses(datas))
+            .then(datas => setAllDatas(datas))
     }, [])
 
-    const handleFilterCourses = datas => setFilterCoursesPage(datas)
+    const handleFilterArrDatas = datas => setFilterDataPage(datas)
 
     return (
         <section>
