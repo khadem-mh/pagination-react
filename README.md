@@ -85,6 +85,7 @@ export default function Test() {
 | `onFilterDatas` | `Function` | **_Required_**. Returns a function that contains data on that page، such as page 4. |
 | `isArrowsShow` | `Boolean` | **_Optional_**. Auxiliary arrows for switching between pages |
 | `separateBox` | `Boolean` | **_Optional_**.  I mean, with... Spaces between page 1 and 4 |
+| `directionPage` | `String` | **_Optional_**.  direction pagination rtl or ltr. by default ltr |
 | `bgColor` | `String` | **_Optional_**. Background-Color of all boxes. |
 | `bgColorActive` | `String` | **_Optional_**. The background color of the box of that active page |
 | `color` | `String` | **_Optional_**. Color of all boxes. |
