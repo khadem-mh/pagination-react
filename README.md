@@ -22,7 +22,7 @@
 ## Usage
 - Import the pagination component first.
 ```javascript
-import Pagination from 'react-pagination-smooth';
+import Pagination from 'react-pagination-master/Pagination'
 ```
 - Then enter these essential items to launch pagination
 ```javascript
@@ -36,7 +36,7 @@ import Pagination from 'react-pagination-smooth';
 - An example in the project.
 ```javascript
 import React, { useState, useEffect } from 'react'
-import Pagination from 'react-pagination-smooth';
+import Pagination from 'react-pagination-master/Pagination'
 
 export default function Test() {
 
