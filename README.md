@@ -35,7 +35,7 @@ import Pagination from 'react-pagination-master/Pagination'
     onFilterDatas={handleFilterArrDatas}
 />
 ```
-- An example in the project.
+# Example
 ```javascript
 import React, { useState, useEffect } from 'react'
 import Pagination from 'react-pagination-master/Pagination'
