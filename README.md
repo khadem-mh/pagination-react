@@ -16,6 +16,9 @@
 >
 > High personalization capabilities such as color, background, visibility or lack of auxiliary arrows, etc.
 
+**_NOTE_**
+📝 
+This library is for React language only.
 ## View of the Library
 
 <img src="./public/Video/page-1.gif" width="500">
