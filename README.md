@@ -4,9 +4,7 @@
 <img src="./public/Images/header.png" width="1000">
 
 ## Description Library
-> Before you start the description if you want to install this package from the npmjs website, visit this [Link](https://www.npmjs.com/package/react-pagination-smooth)
->
-> Of course, you can add the same Pagination folder in your project and use only one line of import and use
+> Before you start the description if you want to install this package visit this [Link](https://www.npmjs.com/package/react-pagination-master) the site npmjs
 >
 > Library ■ A very useful and efficient pagination library for React-Spa websites that shows data without refreshing the page
 >
@@ -27,21 +25,21 @@ This library is for React language only.
 ## Usage
 - Import the pagination component first.
 ```javascript
-import Pagination from 'react-pagination-master/Pagination'
+import Pagination from 'react-pagination-master'
 ```
 - Then enter these essential items to launch pagination
 ```javascript
  <Pagination
-    arrDatas={arrDatas}
-    countDataPerPage={1}
+    arrDatas={allDatas}
+    countDataPerPage={3}
     pathName={'/all-courses/page/'}
-    onFilterDatas={handleFilterArrDatas}
+    onFilterDatas={handleFilterAllDatas}
 />
 ```
 # Example
 ```javascript
 import React, { useState, useEffect } from 'react'
-import Pagination from 'react-pagination-master/Pagination'
+import Pagination from 'react-pagination-master'
 
 export default function Test() {
 
@@ -54,7 +52,7 @@ export default function Test() {
             .then(datas => setAllDatas(datas))
     }, [])
 
-    const handleFilterArrDatas = datas => setFilterDataPage(datas)
+    const handleFilterArrDatas = datas => setFilterDataPage(datas) //get data from package pagination
 
     return (
         <section>
@@ -67,12 +65,15 @@ export default function Test() {
             </div>
 
             <div>
-                <Pagination
-                    arrDatas={arrDatas}
-                    countDataPerPage={6}
-                    pathName={'/all-Datas/page/'}
-                    onFilterDatas={handleFilterArrDatas}
-                />
+                {
+                    allDatas.length && //important condition
+                        <Pagination
+                            arrDatas={allDatas}
+                            countDataPerPage={3}
+                            pathName={'/all-Datas/page/'}
+                            onFilterDatas={handleFilterArrDatas}
+                        />
+                }
             </div>
         </section>
     )
