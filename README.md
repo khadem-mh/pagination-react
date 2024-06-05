@@ -18,6 +18,8 @@
 >
 > One of the most interesting and useful features of this library is that if you have 3 pages for your products، you have 3 boxes for pagination. Let's say your site's route to display products is all-Datas/page/1 If the user manually tries to change 1 to 0 or less or greater than 3, it will automatically be redirected to page 1. 
 >
+> In addition، if you have 1 product page، you won't be shown pagination in the DOM of your project، but the URL logic is if it is all-courses/page/1، although pagination is not shown، but if the user wants to move the number 1 higher or lower، the library itself will redirect the user to page 1، and that's the authority of this library.
+>
 
 **_NOTE_**
 📝 
