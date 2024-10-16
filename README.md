@@ -159,22 +159,16 @@ return (
 ```
 
 ## Package Style Props 💎
-
-<div style="overflow-x:auto;">
-
-| Parameter       | Type      | Field Status   | value        | text                     | text
-| :--------       | :------   | :----------    | :--------    | :------------            | :-----------------
-| `isArrowsShow`  | `Boolean` | **_Optional_** | false / true |  &nbsp; &nbsp;  ░1...░ ░5░ ░...10░       | ← ░1...░ ░5░ ░...10░ → |
-| `separateBox`   | `Boolean` | **_Optional_** | false / true | ← ░1...░ ░5░ ░...10░ →   | ← ░1░ ░...░ ░5░ ░...░ ░10░ →|
-| `stickingBoxes` | `Boolean` | **_Optional_** | false / true | ← ░1...░ ░5░ ░...10░ →   | ←░1...░5░...10░ → |
-| `directionPage` | `String`  | **_Optional_** | rtl / ltr    | ← ░10...░ ░5░ ░...1░ →   | ←░1...░5░...10░ → |
-| `bgColor`       | `String`  | **_Optional_** | 🔳          | ⚪ ⚫ 🔴 🔵 🔘 ...    |
-| `bgColorActive` | `String`  | **_Optional_** | 🔳          | ⚪ ⚫ 🔴 🔵 🔘 ...    |
-| `color`         | `String`  | **_Optional_** | 🔳          | ⚪ ⚫ 🔴 🔵 🔘 ...    |
-| `colorActive`   | `String`  | **_Optional_** | 🔳          | ⚪ ⚫ 🔴 🔵 🔘 ...    |
-
-</div>
-
+| Parameter       | Type      | Field Status   | text                                      | text
+| :--------       | :------   | :----------    | :------------                             | :-----------------
+| `isArrowsShow`  | `Boolean` | **_Optional_** | false &nbsp; &nbsp;  ░1...░ ░5░ ░...10░   | true ← ░1...░ ░5░ ░...10░ → |
+| `separateBox`   | `Boolean` | **_Optional_** | false ← ░1...░ ░5░ ░...10░ →              | true ← ░1░ ░...░ ░5░ ░...░ ░10░ →|
+| `stickingBoxes` | `Boolean` | **_Optional_** | false ← ░1...░ ░5░ ░...10░ →              | true ←░1...░5░...10░ → |
+| `directionPage` | `String`  | **_Optional_** | rtl &nbsp; &nbsp; ← ░10...░ ░5░ ░...1░ →  | ltr &nbsp;&nbsp; ←░1...░5░...10░ → |
+| `bgColor`       | `String`  | **_Optional_** | ⚪ ⚫ 🔴 🔵 ...    |
+| `bgColorActive` | `String`  | **_Optional_** | ⚪ ⚫ 🔴 🔵 ...    |
+| `color`         | `String`  | **_Optional_** | ⚪ ⚫ 🔴 🔵 ...    |
+| `colorActive`   | `String`  | **_Optional_** | ⚪ ⚫ 🔴 🔵 ...    |
 ___
 <img src="https://github.com/khadem-mh/khadem-mh/blob/khadem/my-img/2024-10-01_17-25-38.png" width="1000"/>
 
