@@ -1,35 +1,30 @@
-## <p align="center">Hi 👋 I'm an expert on React Js 👨‍💻 Next JS and FrontEnd Web Developer.</p>
+# A quick look
 
-
-<img src="./public/Images/header.png" width="1000"> 
-
-## Description Library
 > Before you start the description if you want to install this package visit this [Link](https://www.npmjs.com/package/react-pagination-master) the site npmjs
->
-> Library ■ A very useful and efficient pagination library for React-Spa websites that shows data without refreshing the page
->
-> It is very compact and optimized and has only `2 dependencies`, both react and react-dom.
->
-> *__Without refreshing the page, the products shown and the URL changes__*
->
-> The way the package works is that first you enter all the data you need and the number of data you want on each page and leave the rest of the work to the package ☻
->
-> High personalization capabilities such as color, background, visibility or lack of auxiliary arrows, etc.
->
-> One of the most interesting and useful features of this library is that if you have 3 pages for your products، you have 3 boxes for pagination. Let's say your site's route to display products is all-Datas/page/1 If the user manually tries to change 1 to 0 or less or greater than 3, it will automatically be redirected to page 1. 
->
-> In addition، if you have 1 product page، you won't be shown pagination in the DOM of your project، but the URL logic is if it is all-courses/page/1، although pagination is not shown، but if the user wants to move the number 1 higher or lower، the library itself will redirect the user to page 1، and that's the authority of this library.
->
 
-**_NOTE_**
-📝 
-This library is for React language only.
+- One of the smallest, most flexible and simplest Pagination packages for the React framework. Full root control in Pagination fully automatically without refreshing the page 👨‍💻
+
+- Full control of root and URL on every page
+
+- Many features and options to customize Pagination
+
+- Transferring the user from the wrong root to the right root
+
+- A completely optimized and compact package for your website pagination without many additional dependencies
+
+- This package has no dependencies. Only two main dependencies, react and react-dom, which are the basis of the website and should be
+
+- For each page, the data of the same page is received from the server and displayed in the DOM
+
 ## View of the Library
+<img src="https://github.com/khadem-mh/pagination-react/blob/main/public/Video/page-1.gif" width="1000">
+<img src="https://github.com/khadem-mh/pagination-react/blob/main/public/Images/modes.png" width="1000">
 
-<img src="./public/Video/page-1.gif" width="500">
-<img src="./public/Images/modes.png" width="500">
-
-## Usage
+## Usage ✍
+- Install Package
+```bash
+npm i react-pagination-master
+```
 - Import the pagination component first.
 ```javascript
 import Pagination from 'react-pagination-master'
@@ -37,85 +32,147 @@ import Pagination from 'react-pagination-master'
 - Then enter these essential items to launch pagination
 ```javascript
 <Pagination
-    arrDatas={allDatas}
-    countDataPerPage={3}
-    pathName={'/all-courses/page/'}
-    onFilterDatas={handleFilterArrDatas}
+    arrDatas={dataPage}
+    countItems={10}
+    countDataPerPage={1}
+    pathName={'/panel/users/'}
+    onFilterDatas={({ showDatasInDOM, activePage }) => {
+      setActivePage(activePage)          // Necessary
+      setFilterDataPage(showDatasInDOM) // Necessary
+    }}
 />
 ```
-- format your datas. Of course، using useState is optional you only need to format the information you send must be the object in the array format.
+
+# Ready Example
 ```javascript
-const [allDatas, setAllDatas] = useState([
-    {id:1, ...},
-    {id:2, ...},
-    {id:3, ...},
-    {id:4, ...},
-])
-```
-# Example
-```javascript
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import Pagination from 'react-pagination-master'
 
-export default function Test() {
+export default function App() {
+  
+  // (necessary) The initial values ​​must be as below ✍️       |||
+  const [dataPage, setDataPage] = useState([])                //\\ Your Datas   
+  const [filterDataPage, setFilterDataPage] = useState([])   //  \\ Filter Datas
+  const [activePage, setActivePage] = useState(null)        //    \\ Active Page
+  const [isLoading, setIsLoading] = useState(null)         //      \\ Status Loading Datas
 
-    const [allDatas, setAllDatas] = useState([])
-    const [filterDataPage, setFilterDataPage] = useState([])
+  useEffect(() => {
+    if (activePage) {
+      fetch(`https://jsonplaceholder.typicode.com/users/${activePage}`)
+        .then(res => res.json())
+        .then(data => {
+          setDataPage([data])
+          /*          [    ]
+            If the returned data was only an object, 
+            you should put the object in an array, otherwise it is not needed.
+          */
+        });
+    }
+  }, [activePage])
 
-    useEffect(() => {
-        fetch(`http://localhost:3000/v1/datas`)
-            .then(res => res.json())
-            .then(datas => setAllDatas(datas))
-    }, [])
+  return (
+    <section>
 
-    const handleFilterArrDatas = datas => setFilterDataPage(datas)
+      {
+        isLoading
+          ?
+          <p>Loading...</p>
+          :
+          filterDataPage.map((datas, index) => (
+            <p key={index}>{datas.name}</p>
+          ))
+      }
 
-    return (
-        <section>
-            <div>
-                {
-                    filterDataPage.map((datas, index) => (
-                        <Course key={index} {...datas} />
-                    ))
-                }
-            </div>
+      <Pagination
+        arrDatas={dataPage}
+        countItems={10}
+        countDataPerPage={1}
+        pathName={'/panel/users/'}
+        onFilterDatas={({ showDatasInDOM, activePage, isLoading }) => {
+          setActivePage(activePage)          // Necessary
+          setFilterDataPage(showDatasInDOM) // Necessary
+          setIsLoading(isLoading)          // Optional
+        }}
+      />
 
-            <div>
-                { allDatas.length &&
-                    <Pagination
-                        arrDatas={allDatas}
-                        countDataPerPage={3}
-                        pathName={'/all-Datas/page/'}
-                        onFilterDatas={handleFilterArrDatas}
-                    />
-                }
-            </div>
-        </section>
-    )
+    </section>
+  )
 }
 ```
+## Package Logic Props 👨‍💻
 
-## Uses Props The Pagination 
+| Parameter         | Type       | Field Status    | Description              |
+| :--------         | :-------   | :------         | :-------------------------------- |
+| `arrDatas`        | `Array`    | **_Required_**  | Array of products or anything else |
+| `countItems`      | `Number`   | **_Required_**  | You must enter the exact number of your items to calculate the number of pages |
+| `countDataPerPage`| `Number`   | **_Required_**  | On each page you want to show multiple items |
+| `pathName`        | `String`   | **_Required_**  | The URL that your product is located in. |
+| `activePage`      | `Number`   | **_Optional_**  | Selecting the active page as soon as the page is loaded for the user |
+| `onFilterDatas`   | `Function` | **_Required_**  | The return function contains arguments to handle pages |
 
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `arrDatas` | `Array` | **_Required_**. Array of products or anything else |
-| `countDataPerPage` | `Number` | **_Required_**. On each page you want to show multiple items |
-| `pathName` | `String` | **_Required_**. The URL that your product is located in. |
-| `onFilterDatas` | `Function` | **_Required_**. Returns a function that contains data on that page، such as page 4. |
-| `isArrowsShow` | `Boolean` | **_Optional_**. Auxiliary arrows for switching between pages |
-| `separateBox` | `Boolean` | **_Optional_**.  I mean, with... Spaces between page 1 and 4 |
-| `directionPage` | `String` | **_Optional_**.  direction pagination rtl or ltr. by default ltr |
-| `bgColor` | `String` | **_Optional_**. Background-Color of all boxes. |
-| `bgColorActive` | `String` | **_Optional_**. The background color of the box of that active page |
-| `color` | `String` | **_Optional_**. Color of all boxes. |
-| `colorActive` | `String` | **_Optional_**. Text Color Box of the active page |
+### ╔╚ `onFilterDatas` ╝╗
 
+`onFilterDatas` is a return function from the package side that returns 3 arguments and you must extract the same names as below from the input argument
 
+| Parameter         | Type       | Field Status    | Description              |
+| :--------         | :-------   | :------         | :-------------------------------- |
+| `showDatasInDOM`  | `Array`    | **_Required_**  | An array of objects and data to display in the DOM |
+| `activePage`      | `Number`   | **_Required_**  | The page where the user is active |
+| `isLoading`       | `Boolean`  | **_Optional_**  | Loading is shown to the user until the data of that page is fully loaded |
+
+For example:
+
+```javascript
+onFilterDatas={({ showDatasInDOM, activePage, isLoading }) => {
+    setActivePage(activePage)          // Necessary
+    setFilterDataPage(showDatasInDOM) // Necessary
+    setIsLoading(isLoading)          // Optional
+}}
+```
+### ╔╚ `arrDatas` ╝╗
+_**example format your datas**_. 
+
+```javascript
+arrDatas = {[
+    {id:1, text: "1", ...},
+    {id:2, text: "2", ...},
+    {id:3, text: "3", ...},
+    {id:4, text: "4", ...},
+]}
+```
+
+`arrDatas` is an array and is used to store the data of the active page that the user is on, and after the user goes to the next page, the new data should replace the previous data of the array.
+
+This array should never be placed inside another array, but the data you want in the form of objects should be inside this array.
+
+Be sure to try using an empty array in React's useState hook for initialization
+```javascript
+const [dataPage, setDataPage] = useState([])
+
+return (
+    <div>
+        <Pagination
+            arrDatas={dataPage}
+        />
+    </div>
+)
+```
+
+## Package Style Props 💎
+| Parameter       | Type      | Field Status   | text                         | text
+| :--------       | :------   | :----------    | :------------                | :-----------------
+| `isArrowsShow`  | `Boolean` | **_Optional_** | false  ░1...░ ░5░ ░...10░    | true ← ░1...░ ░5░ ░...10░ → |
+| `separateBox`   | `Boolean` | **_Optional_** | false ← ░1...░ ░5░ ░...10░ → | true ← ░1░ ░...░ ░5░ ░...░ ░10░ →|
+| `stickingBoxes` | `Boolean` | **_Optional_** | false ← ░1...░ ░5░ ░...10░ → | true ←░1...░5░...10░ → |
+| `directionPage` | `String`  | **_Optional_** | rtl ← ░10...░ ░5░ ░...1░ →   | ltr ←░1...░5░...10░ → |
+| `bgColor`       | `String`  | **_Optional_** | ⚪ ⚫ 🔴 🔵 🔘 ... |
+| `bgColorActive` | `String`  | **_Optional_** | ⚪ ⚫ 🔴 🔵 🔘 ... |
+| `color`         | `String`  | **_Optional_** | ⚪ ⚫ 🔴 🔵 🔘 ... |
+| `colorActive`   | `String`  | **_Optional_** | ⚪ ⚫ 🔴 🔵 🔘 ... |
 ___
+<img src="https://github.com/khadem-mh/khadem-mh/blob/khadem/my-img/2024-10-01_17-25-38.png" width="1000"/>
+
 >### Social Network
-> [<img src="./public/Images/github.png" width="30">](https://github.com/khadem-mh)
-> [<img src="./public/Images/linkedin.png" width="30">](https://www.linkedin.com/in/khadem-mh/)
-> [<img src="./public/Images/telegram.png" width="30">](https://t.me/mhkhadem)
-> [<img src="./public/Images/whatsapp.png" width="30">](https://wa.me/989031335939)
-> [<img src="./public/Images/wakatimesvg.png" width="130">](https://wakatime.com/@khadem_mh)
+> [<img src="https://github.com/khadem-mh/pagination-react/blob/main/public/Images/github.png" width="30">](https://github.com/khadem-mh)
+>> [<img src="https://github.com/khadem-mh/pagination-react/blob/main/public/Images/linkedin.png" width="30">](https://www.linkedin.com/in/khadem-mh/)
+>>> [<img src="https://github.com/khadem-mh/pagination-react/blob/main/public/Images/telegram.png" width="30">](https://t.me/mhkhadem)
