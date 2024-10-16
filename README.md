@@ -1,3 +1,5 @@
+<img src="https://github.com/khadem-mh/pagination-react/blob/main/public/Images/master.png?raw=true" width="1000">
+
 # A quick look
 
 > Before you start the description if you want to install this package visit this [Link](https://www.npmjs.com/package/react-pagination-master) the site npmjs
