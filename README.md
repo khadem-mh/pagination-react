@@ -159,11 +159,11 @@ return (
 ```
 
 ## Package Style Props 💎
-| Parameter       | Type      | Field Status   | text                         | text
+| Parameter       | Type      | Field Status   | false                         | true
 | :--------       | :------   | :----------    | :------------                | :-----------------
-| `isArrowsShow`  | `Boolean` | **_Optional_** | false  ░1...░ ░5░ ░...10░    | true ← ░1...░ ░5░ ░...10░ → |
-| `separateBox`   | `Boolean` | **_Optional_** | false ← ░1...░ ░5░ ░...10░ → | true ← ░1░ ░...░ ░5░ ░...░ ░10░ →|
-| `stickingBoxes` | `Boolean` | **_Optional_** | false ← ░1...░ ░5░ ░...10░ → | true ←░1...░5░...10░ → |
+| `isArrowsShow`  | `Boolean` | **_Optional_** |   ░1...░ ░5░ ░...10░         | ← ░1...░ ░5░ ░...10░ → |
+| `separateBox`   | `Boolean` | **_Optional_** | ← ░1...░ ░5░ ░...10░ →       | ← ░1░ ░...░ ░5░ ░...░ ░10░ →|
+| `stickingBoxes` | `Boolean` | **_Optional_** | ← ░1...░ ░5░ ░...10░ →       | ←░1...░5░...10░ → |
 | `directionPage` | `String`  | **_Optional_** | rtl ← ░10...░ ░5░ ░...1░ →   | ltr ←░1...░5░...10░ → |
 | `bgColor`       | `String`  | **_Optional_** | ⚪ ⚫ 🔴 🔵 🔘 ... |
 | `bgColorActive` | `String`  | **_Optional_** | ⚪ ⚫ 🔴 🔵 🔘 ... |
