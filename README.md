@@ -159,12 +159,12 @@ return (
 ```
 
 ## Package Style Props 💎
-| Parameter       | Type      | Field Status   | text                                      | text
-| :--------       | :------   | :----------    | :------------                             | :-----------------
-| `isArrowsShow`  | `Boolean` | **_Optional_** | false &nbsp;&nbsp;  ░1...░ ░5░ ░...10░   | true ←░1...░ ░5░ ░...10░→ |
-| `separateBox`   | `Boolean` | **_Optional_** | false ←░1...░ ░5░ ░...10░→              | true ←░1░ ░...░ ░5░ ░...░ ░10░→|
-| `stickingBoxes` | `Boolean` | **_Optional_** | false ←░1...░ ░5░ ░...10░→              | true ←░1...░5░...10░→ |
-| `directionPage` | `String`  | **_Optional_** | rtl &nbsp; &nbsp; ←░10...░ ░5░ ░...1░→  | ltr &nbsp;&nbsp; ←░1...░5░...10░→ |
+| Parameter       | Type      | Field Status   | text                                     | text
+| :--------       | :------   | :----------    | :------------                            | :-----------------
+| `isArrowsShow`  | `Boolean` | **_Optional_** | false &nbsp; &nbsp;  ░1...░ ░5░ ░...10░   | true ← ░1...░ ░5░ ░...10░ → |
+| `separateBox`   | `Boolean` | **_Optional_** | false ← ░1...░ ░5░ ░...10░ →             | true ← ░1░ ░...░ ░5░ ░...░ ░10░ →|
+| `stickingBoxes` | `Boolean` | **_Optional_** | false ← ░1...░ ░5░ ░...10░ →                 | true ← ░1...░5░...10░ → |
+| `directionPage` | `String`  | **_Optional_** | rtl &nbsp; &nbsp; ← ░10...░ ░5░ ░...1░ →  | ltr &nbsp;&nbsp; ← ░1...░5░...10░ → |
 | `bgColor`       | `String`  | **_Optional_** | ⚪ ⚫ 🔴 🔵 ...    |
 | `bgColorActive` | `String`  | **_Optional_** | ⚪ ⚫ 🔴 🔵 ...    |
 | `color`         | `String`  | **_Optional_** | ⚪ ⚫ 🔴 🔵 ...    |
