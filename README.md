@@ -159,6 +159,9 @@ return (
 ```
 
 ## Package Style Props 💎
+
+<div style="overflow-x:auto;">
+
 | Parameter       | Type      | Field Status   | value        | text                     | text
 | :--------       | :------   | :----------    | :--------    | :------------            | :-----------------
 | `isArrowsShow`  | `Boolean` | **_Optional_** | false / true |  &nbsp; &nbsp;  ░1...░ ░5░ ░...10░       | ← ░1...░ ░5░ ░...10░ → |
@@ -169,6 +172,9 @@ return (
 | `bgColorActive` | `String`  | **_Optional_** | 🔳          | ⚪ ⚫ 🔴 🔵 🔘 ...    |
 | `color`         | `String`  | **_Optional_** | 🔳          | ⚪ ⚫ 🔴 🔵 🔘 ...    |
 | `colorActive`   | `String`  | **_Optional_** | 🔳          | ⚪ ⚫ 🔴 🔵 🔘 ...    |
+
+</div>
+
 ___
 <img src="https://github.com/khadem-mh/khadem-mh/blob/khadem/my-img/2024-10-01_17-25-38.png" width="1000"/>
 
