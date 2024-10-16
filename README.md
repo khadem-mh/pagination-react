@@ -20,7 +20,7 @@
 
 ## View of the Library
 <img src="https://github.com/khadem-mh/pagination-react/blob/main/public/Video/page-1.gif" width="1000">
-<img src="https://github.com/khadem-mh/pagination-react/blob/main/public/Images/modes.png" width="1000">
+<img src="https://github.com/khadem-mh/pagination-react/blob/main/public/Images/modes.png?raw=true" width="1000">
 
 ## Usage ✍
 - Install Package
